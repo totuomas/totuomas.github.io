@@ -17,35 +17,47 @@
   <div id="ocean-bg" class="fixed inset-0 z-[-1] pointer-events-none"></div>
 
   <!-- HERO -->
-  <section id="hero" class="hero flex items-center justify-center relative">
-    <div class="max-w-5xl mx-auto text-center px-6">
+  <section id="hero" class="hero flex items-center justify-center relative min-h-[70vh] md:min-h-screen px-6">
 
-      <div class="profile-container mb-8 relative" id="profile-container">
+    <div class="max-w-5xl mx-auto text-center">
+
+      <!-- PROFILE IMAGE -->
+      <div class="profile-container mb-6 relative mx-auto" id="profile-container">
         <a href="cv.pdf" download>
-          <img id="profile-img" src="icon.png" alt="Tuomas Suni" class="profile cursor-pointer">
-          <div class="absolute top-1/2 left-1/2 w-[13.5rem] h-[13.5rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gray-500/50 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300">
-            <span class="text-white text-xl font-medium">Lataa CV</span>
+          <img 
+            id="profile-img" 
+            src="icon.png" 
+            alt="Tuomas Suni" 
+            class="profile cursor-pointer w-40 h-40 md:w-[13.5rem] md:h-[13.5rem] rounded-full mx-auto"
+          >
+          <div class="absolute top-1/2 left-1/2 w-40 h-40 md:w-[13.5rem] md:h-[13.5rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gray-500/50 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300">
+            <span class="text-sm md:text-xl font-medium text-white">Lataa CV</span>
           </div>
         </a>
 
-        <div id="bubbles-container" class="absolute inset-0"></div>
+        <!-- BUBBLES -->
+        <div id="bubbles-container" class="absolute inset-0 scale-75 md:scale-100"></div>
       </div>
 
-      <h1 id="hero-name" class="heading-font text-7xl md:text-8xl font-medium tracking-[-2px] mb-2 text-white drop-shadow-[0_10px_20px_rgba(30,156,216,0.4)] hero-text">
+      <!-- NAME -->
+      <h1 id="hero-name" class="heading-font text-4xl md:text-7xl lg:text-8xl font-medium tracking-[-1px] md:tracking-[-2px] mb-2 text-white drop-shadow-[0_10px_20px_rgba(30,156,216,0.4)] hero-text">
         Tuomas Suni
       </h1>
 
-      <p id="hero-tagline" class="text-2xl md:text-3xl text-white/90 font-light tracking-[-0.5px] hero-text">
+      <!-- TAGLINE -->
+      <p id="hero-tagline" class="text-sm md:text-2xl lg:text-3xl text-white/90 font-light tracking-[-0.5px] hero-text mb-6 md:mb-12">
         Sovelluskehitys | e-Pedagogiikka | Projektinhallinta
       </p>
 
-      <div class="mt-12 flex justify-center">
+      <!-- SCROLL ARROW -->
+      <div class="mt-6 md:mt-12 flex justify-center">
         <div class="arrow-wrapper">
-          <button id="scroll-down" class="scroll-arrow">
+          <button id="scroll-down" class="scroll-arrow text-white text-2xl md:text-4xl hover:text-white/80 transition">
             △
           </button>
         </div>
       </div>
+
     </div>
   </section>
   
@@ -58,7 +70,7 @@
           <div class="h-1 w-12 bg-[#7ed4ff] rounded-full"></div>
         </div>
 
-        <div class="md:w-2/3 glass-card rounded-3xl p-10 text-lg leading-relaxed min-h-[360px]">
+        <div class="md:w-2/3 glass-card rounded-3xl p-10 text-lg leading-relaxed min-h-[640px] md:min-h-[360px]">
           <p id="minusta-text"></p>
           <div id="minusta-keywords" class="mt-4 text-xl text-white/100">
             <span class="keyword opacity-0 inline-block mr-2 transition-opacity duration-1000">Teknologia</span>
@@ -76,8 +88,14 @@
   <section id="education" class="section py-24 bg-transparent">
     <div class="max-w-5xl mx-auto px-6">
       <div class="flex flex-col md:flex-row gap-16 items-start">
+        
+        <!-- TITLE: Koulutus -->
+        <div class="md:w-1/3">
+          <h2 class="text-5xl heading-font font-medium mb-4 tracking-tight">Koulutus</h2>
+          <div class="h-1 w-12 bg-[#7ed4ff] rounded-full"></div>
+        </div>
 
-        <!-- LEFT: CONTENT -->
+        <!-- CONTENT BOX -->
         <div class="md:w-2/3 glass-card rounded-3xl p-10 text-lg leading-relaxed min-h-[360px]">
           <div class="text-3xl font-semibold">Tieto- ja viestintätekniikka (B.Eng)</div>
           <div class="text-white/70">Turun ammattikorkeakoulu | 2020-2024</div>
@@ -85,7 +103,7 @@
           <div class="text-white/50">sivuaine: Digitaalinen liiketoiminta</div>
 
           <a href="https://urn.fi/URN:NBN:fi:amk-202403154459" class="thesis-link" target="_blank">
-            <p class="mt-8 text-lg">Tutustu opinnäytetyöhöni</p>
+            <p class="mt-6 text-lg">Tutustu opinnäytetyöhöni</p>
           </a>
 
           <p class="mt-6">
@@ -97,12 +115,6 @@
           <p class="mt-6">
             Tilastollinen analytiikka | Videopelikulttuurit | Akateeminen kirjoittaminen
           </p>
-        </div>
-
-        <!-- RIGHT: TITLE -->
-        <div class="md:w-1/3">
-          <h2 class="text-5xl heading-font font-medium mb-4 tracking-tight">Koulutus</h2>
-          <div class="h-1 w-12 bg-[#7ed4ff] rounded-full"></div>
         </div>
 
       </div>
@@ -281,13 +293,18 @@
   <section id="contact" class="section py-24 bg-transparent">
     <div class="max-w-5xl mx-auto px-6 text-center">
       <h2 class="text-5xl heading-font font-medium mb-6 tracking-tight">Yhteystiedot</h2>
-      <p class="text-2xl mb-12 text-white/80">Kerro ideasi lähettämällä viestiä alla olevaan sähköpostiosoitteeseen tai soita.</p>
+      <p class="text-2xl mb-12 text-white/80">
+        Kerro ideasi lähettämällä viestiä alla olevaan sähköpostiosoitteeseen tai soita.
+      </p>
       
-      <div class="flex flex-nowrap justify-center gap-6">
-        <a href="mailto:to.tuomas@outlook.com" class="glass-card text-xl py-6 rounded-3xl flex items-center justify-center w-80 hover:scale-105 transition">
+      <div class="flex flex-col md:flex-row justify-center gap-6">
+        <a href="mailto:to.tuomas@outlook.com" 
+          class="glass-card text-xl py-6 px-8 rounded-3xl flex items-center justify-center hover:scale-105 transition w-full md:w-auto">
           ✉ to.tuomas@outlook.com
         </a>
-        <a href="tel:+358452338324" class="glass-card text-xl py-6 rounded-3xl flex items-center justify-center w-80 hover:scale-105 transition">
+
+        <a href="tel:+358452338324" 
+          class="glass-card text-xl py-6 px-8 rounded-3xl flex items-center justify-center hover:scale-105 transition w-full md:w-auto">
           ☏ +358 45 233 8324
         </a>
       </div>
@@ -295,21 +312,21 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="bg-[#005c91] text-white py-6 relative">
-    <div class="max-w-5xl mx-auto px-6 relative flex items-center">
+  <footer class="bg-[#005c91] text-white py-6">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-2">
 
-      <!-- LEFT: very left -->
-      <div class="absolute left-0 text-sm md:text-base">
+      <!-- LEFT -->
+      <div class="text-sm md:text-base">
         © 2026 | Tuomas Suni
       </div>
 
-      <!-- CENTER: Palaa alkuun -->
-      <button id="back-to-top" class="absolute left-1/2 -translate-x-1/2 text-white/90 hover:text-white font-medium text-sm md:text-base transition underline">
+      <!-- CENTER -->
+      <button id="back-to-top" class="text-white/90 hover:text-white font-medium text-sm md:text-base transition underline">
         Palaa alkuun ↑
       </button>
 
-      <!-- RIGHT: very right -->
-      <div class="absolute right-0 text-sm md:text-base">
+      <!-- RIGHT -->
+      <div class="text-sm md:text-base">
         FI | EN
       </div>
 
