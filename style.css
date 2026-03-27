@@ -58,8 +58,8 @@ body {
 ========================= */
 .profile-container {
   position: relative;
-  width: 420px;
-  height: 420px;
+  width: min(90vw, 420px);
+  height: min(90vw, 420px);
   margin: 0 auto;
 }
 
@@ -68,8 +68,6 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 240px;
-  height: 240px;
   border-radius: 9999px;
   border: 12px solid rgba(255,255,255,0.25);
   box-shadow: 0 0 0 8px rgba(126, 212, 255, 0.3),
@@ -90,6 +88,7 @@ body {
 /* =========================
    BUBBLES
 ========================= */
+
 .bubble {
   pointer-events: auto;
   position: absolute;
@@ -133,6 +132,11 @@ body {
 
 .bubble:hover {
   scale: 1.1;
+}
+
+#bubbles-container {
+  z-index: 20;
+  pointer-events: none; /* important */
 }
 
 /* =========================
@@ -249,9 +253,4 @@ body {
 @keyframes floatSlow {
   0%,100% { transform: translate(-50%, -50%) translateY(0); }
   50% { transform: translate(-50%, -50%) translateY(-8px); }
-}
-
-#bubbles-container {
-  z-index: 20;
-  pointer-events: none; /* important */
 }
