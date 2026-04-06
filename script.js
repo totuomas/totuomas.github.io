@@ -25,13 +25,15 @@ function createBubbles() {
   const container = document.getElementById('bubbles-container')
   const profileContainer = document.getElementById('profile-container')
 
+  const isEnglish = window.location.pathname.includes("/en");
+
   const navItems = [
-    { id: 'about', label: 'Minusta' },
-    { id: 'experience', label: 'Kokemus' },
-    { id: 'education', label: 'Koulutus' },
-    { id: 'projects', label: 'Projektit' },
-    { id: 'skills', label: 'Taidot' },
-    { id: 'contact', label: 'Yhteys' }
+    { id: 'about', label: isEnglish ? 'About' : 'Minusta' },
+    { id: 'experience', label: isEnglish ? 'Experience' : 'Kokemus' },
+    { id: 'education', label: isEnglish ? 'Education' : 'Koulutus' },
+    { id: 'projects', label: isEnglish ? 'Projects' : 'Projektit' },
+    { id: 'skills', label: isEnglish ? 'Skills' : 'Taidot' },
+    { id: 'contact', label: isEnglish ? 'Contact' : 'Yhteystiedot' }
   ]
 
   const radius = 200
@@ -132,7 +134,9 @@ function initScrollAnimations() {
           hasTypedAbout = true
           const textEl = document.getElementById("minusta-text")
 
-          const text = "Hei! Olen Tuomas, tietotekniikan insinööri intohimonani teknologia ja pedagogiikka, harrastuksina shakki ja urheilu. Työskentelin opintojeni aikana useissa poikkitieteellistä osaamista vaativissa ohjelmistoprojekteissa milloin suunnittelijana, milloin kehittäjänä ja milloin kaupallisissa tehtävissä. Pidän uuden oppimisesta ja taklaan mielelläni uusia haasteita. Skrollaamalla alas pääset syvemmälle osaamiseeni."
+          const text = isEnglish
+          ? "Hi! I'm Tuomas, a Bachelor of Engineering in Information Technology with a passion for technology and pedagogy. My hobbies include chess and sports. During my studies, I worked on several multidisciplinary software projects in roles ranging from designer to developer and even commercial responsibilities. I enjoy learning new things and tackling new challenges. Scroll down to explore my skills further."
+          : "Hei! Olen Tuomas, tietotekniikan insinööri intohimonani teknologia ja pedagogiikka, harrastuksina shakki ja urheilu. Työskentelin opintojeni aikana useissa poikkitieteellistä osaamista vaativissa ohjelmistoprojekteissa milloin suunnittelijana, milloin kehittäjänä ja milloin kaupallisissa tehtävissä. Pidän uuden oppimisesta ja taklaan mielelläni uusia haasteita. Skrollaamalla alas pääset syvemmälle osaamiseeni."
 
           // Type out the main text
           typeWriter(textEl, text, 15)
