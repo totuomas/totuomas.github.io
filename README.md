@@ -24,8 +24,4 @@ A lightweight, modern personal website with an easy-to-navigate design
 * **JavaScript (ES6+)**
 * **Tailwind CSS (CDN)**
 
-## 📈 Future Improvements
-
-* 🌐 Multi-language support (FI / EN toggle)
-
 ---
