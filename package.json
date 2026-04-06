@@ -1,0 +1,31 @@
+{
+  "name": "totuomas.github.io",
+  "version": "1.0.0",
+  "description": "A lightweight, modern personal website with an easy-to-navigate design",
+  "main": "script.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "build": "postcss style.css -o dist/output.css",
+    "dev": "postcss style.css -o dist/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/totuomas/totuomas.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/totuomas/totuomas.github.io/issues"
+  },
+  "homepage": "https://github.com/totuomas/totuomas.github.io#readme",
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.2.2",
+    "postcss": "^8.5.8",
+    "postcss-cli": "^11.0.1",
+    "tailwindcss": "^4.2.2"
+  }
+}

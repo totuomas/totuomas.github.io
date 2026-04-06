@@ -1,6 +1,4 @@
-function initializeTailwind() {
-  tailwind.config = { content: [], theme: { extend: {} } }
-}
+const isEnglish = window.location.pathname.includes("/en");
 
 // Ocean background
 function updateOceanBackground() {
@@ -25,15 +23,13 @@ function createBubbles() {
   const container = document.getElementById('bubbles-container')
   const profileContainer = document.getElementById('profile-container')
 
-  const isEnglish = window.location.pathname.includes("/en");
-
   const navItems = [
     { id: 'about', label: isEnglish ? 'About' : 'Minusta' },
     { id: 'experience', label: isEnglish ? 'Experience' : 'Kokemus' },
     { id: 'education', label: isEnglish ? 'Education' : 'Koulutus' },
     { id: 'projects', label: isEnglish ? 'Projects' : 'Projektit' },
     { id: 'skills', label: isEnglish ? 'Skills' : 'Taidot' },
-    { id: 'contact', label: isEnglish ? 'Contact' : 'Yhteystiedot' }
+    { id: 'contact', label: isEnglish ? 'Contact' : 'Yhteys' }
   ]
 
   const radius = 200
@@ -53,18 +49,18 @@ function createBubbles() {
   })
 
   function positionBubbles() {
-    const bubbles = container.querySelectorAll('.bubble')
-    const centerX = profileContainer.offsetWidth / 2
-    const centerY = profileContainer.offsetHeight / 2
+      const bubbles = container.querySelectorAll('.bubble');
+      const centerX = profileContainer.offsetWidth / 2;
+      const centerY = profileContainer.offsetHeight / 2;
+      const radius = Math.min(centerX, centerY);
 
-    bubbles.forEach(bubble => {
-      const angle = parseFloat(bubble.dataset.angle)
-      const x = centerX + radius * Math.cos(angle)
-      const y = centerY + radius * Math.sin(angle)
-
-      bubble.style.left = `${x - 35}px`
-      bubble.style.top = `${y - 35}px`
-    })
+      bubbles.forEach(bubble => {
+          const angle = parseFloat(bubble.dataset.angle);
+          const x = centerX + radius * Math.cos(angle);
+          const y = centerY + radius * Math.sin(angle);
+          bubble.style.left = `${x - bubble.offsetWidth / 2}px`;
+          bubble.style.top = `${y - bubble.offsetHeight / 2}px`;
+      });
   }
 
   positionBubbles()
@@ -161,7 +157,6 @@ function initScrollAnimations() {
 
 // Init
 function init() {
-  initializeTailwind()
   createBubbles()
   initHeroAnimations()
   initScrollDownArrow()
