@@ -52,7 +52,9 @@ function createBubbles() {
       const bubbles = container.querySelectorAll('.bubble');
       const centerX = profileContainer.offsetWidth / 2;
       const centerY = profileContainer.offsetHeight / 2;
-      const radius = Math.min(centerX, centerY);
+
+      let radius = Math.min(centerX, centerY);
+      if (window.innerWidth >= 768) radius = radius * 0.9;
 
       bubbles.forEach(bubble => {
           const angle = parseFloat(bubble.dataset.angle);
@@ -123,6 +125,7 @@ function initScrollAnimations() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
+        
         entry.target.classList.add('section-show')
         entry.target.classList.remove('section-hidden')
 
@@ -140,13 +143,17 @@ function initScrollAnimations() {
           // After typing is complete, fade in the keywords one by one
           setTimeout(() => {
             const keywords = document.querySelectorAll('.keyword')
+
             keywords.forEach((keyword, index) => {
+              // Ensure initial state is applied BEFORE transition
+              keyword.style.opacity = "0"
+
               setTimeout(() => {
-                keyword.classList.remove("opacity-0")
-                keyword.classList.add("opacity-100")
-              }, index * 200)  // Adjust the delay between each keyword (300ms)
+                keyword.style.transition = "opacity 1s ease"
+                keyword.style.opacity = "1"
+              }, 50 + index * 300) // small delay + stagger
             })
-          }, text.length * 15 + 500) // Adjust timeout based on typing speed
+          }, text.length * 15 + 500)
         }
       }
     })

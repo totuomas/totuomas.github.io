@@ -202,6 +202,17 @@ body {
   transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
 /* =========================
    SCROLL ARROW
 ========================= */
